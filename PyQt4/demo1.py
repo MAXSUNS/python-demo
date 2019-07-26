@@ -16,6 +16,13 @@ jheight=load_dict['height']
 
 QTextCodec.setCodecForTr(QTextCodec.codecForName("utf8"))
 
+def resource_path(relative_path):
+    """定义一个读取相对路径的函数"""
+    if hasattr(sys, "_MEIPASS"):
+        base_path = sys._MEIPASS
+    else:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 class InputDlg(QDialog):
     def __init__(self, parent=None):
@@ -25,6 +32,10 @@ class InputDlg(QDialog):
         label2 = QLabel(self.tr("性别"))
         label3 = QLabel(self.tr("年龄"))
         label4 = QLabel(self.tr("身高"))
+       # self.label2 = QLabel(self)
+       # self.label2.setFixedWidth(600)
+       # self.label2.setFixedHeight(400)
+       # self.label2.setPixmap(QPixmap(resource_path('resources/test.png')))
 
         self.nameLabel = QLabel(jname)
         self.nameLabel.setFrameStyle(QFrame.Panel | QFrame.Sunken)
