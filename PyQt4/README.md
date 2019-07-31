@@ -4,7 +4,8 @@
     pyinstaller -F -w demo1.py
 此时会在dist下生成一个exe执行文件，此时的执行文件不包含静态文件，比如图片。和代码同一级目录会生成一个demo1.spec文件，这个是进行打包配置的文件。
 修改此文件，修改前：
-exe = EXE(pyz,
+
+        exe = EXE(pyz,
           a.scripts,
           a.binaries,
           a.zipfiles,
@@ -17,8 +18,10 @@ exe = EXE(pyz,
           upx_exclude=[],
           runtime_tmpdir=None,
           console=False )
+
 修改后：
-exe = EXE(pyz,
+
+        exe = EXE(pyz,
           a.scripts,
           a.binaries,
           a.zipfiles,
