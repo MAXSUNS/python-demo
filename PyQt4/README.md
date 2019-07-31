@@ -35,3 +35,5 @@ exe = EXE(pyz,
 
 最后执行：
     pyinstaller -F -w demo1.spec 
+
+如果想打包32位exe，需要python和PyQt4都是32位，再按照上述流程打包即可。
